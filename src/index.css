@@ -7,6 +7,11 @@ body {
   margin: 0;
 }
 
+main {
+  margin: 0 auto;
+  width: 550px;
+}
+
 header {
   display: flex;
   background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
@@ -94,4 +99,9 @@ input {
 
 .meme--button > img {
   margin-left: 10px;
+}
+
+.meme--img {
+  width: 100%;
+  padding: 25px;
 }

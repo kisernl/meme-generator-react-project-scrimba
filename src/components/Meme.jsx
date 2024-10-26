@@ -1,12 +1,34 @@
 import memesData from "../memesData";
+import React from "react";
 
 function Meme() {
-  function randomImg() {
+  // function randomImg() {
+  //   const memeList = memesData.data.memes;
+  //   const randomMeme = Math.floor(Math.random() * memeList.length);
+  //   const randomImgUrl = memeList[randomMeme].url;
+  //   console.log(randomImgUrl);
+  // }
+
+  /**
+   * Challenge: Save the random meme URL in state
+   * - Create new state called `memeImage` with an
+   *   empty string as default
+   * - When the getMemeImage [mine is randomImg] function is called, update
+   *   the `memeImage` state to be the random chosen
+   *   image URL
+   * - Below the div.form, add an <img /> and set the
+   *   src to the new `memeImage` state you created
+   */
+
+  const [memeImage, setMemeImage] = React.useState("");
+  const randomImg = () => {
     const memeList = memesData.data.memes;
     const randomMeme = Math.floor(Math.random() * memeList.length);
     const randomImgUrl = memeList[randomMeme].url;
     console.log(randomImgUrl);
-  }
+    setMemeImage(randomImgUrl);
+    console.log(memeImage);
+  };
 
   return (
     <main>
@@ -36,6 +58,9 @@ function Meme() {
           <img src="../PhotoIcon.svg" className="meme--btn-img" />
         </button>
       </div>
+      {memeImage !== "" && (
+        <img src={memeImage} alt="random meme image" className="meme--img" />
+      )}
     </main>
   );
 }
