@@ -52,7 +52,7 @@ function Meme() {
   function handleChange(event) {
     // console.log(event);
     const { name, value } = event.target;
-    setAllMemes((prevMeme) => {
+    setMeme((prevMeme) => {
       return {
         ...prevMeme,
         [name]: value,
@@ -71,7 +71,7 @@ function Meme() {
               type="text"
               id="topText"
               name="topText"
-              value={allMemes.topText}
+              value={meme.topText}
               onChange={handleChange}
             ></input>
           </div>
@@ -82,7 +82,7 @@ function Meme() {
               type="text"
               id="bottomText"
               name="bottomText"
-              value={allMemes.bottomText}
+              value={meme.bottomText}
               onChange={handleChange}
             ></input>
           </div>
@@ -100,8 +100,8 @@ function Meme() {
             className="meme--img"
           />
         )}
-        <h2 className="meme--text top">{allMemes.topText}</h2>
-        <h2 className="meme--text bottom">{allMemes.bottomText}</h2>
+        <h2 className="meme--text top">{meme.topText}</h2>
+        <h2 className="meme--text bottom">{meme.bottomText}</h2>
       </div>
     </main>
   );
